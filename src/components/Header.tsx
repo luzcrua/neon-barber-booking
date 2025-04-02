@@ -36,7 +36,6 @@ const Header = () => {
             <a href="#services" className="text-lg hover:neon-text-blue transition duration-300">Serviços</a>
             <a href="#gallery" className="text-lg hover:neon-text-blue transition duration-300">Galeria</a>
             <a href="#testimonials" className="text-lg hover:neon-text-blue transition duration-300">Depoimentos</a>
-            <a href="#instagram" className="text-lg hover:neon-text-blue transition duration-300">Instagram</a>
             <a href="#location" className="text-lg hover:neon-text-blue transition duration-300">Localização</a>
           </nav>
           <a href="#booking" className="neon-button-blue hover:bg-neon-blue">Agendar</a>
@@ -80,13 +79,6 @@ const Header = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Depoimentos
-            </a>
-            <a 
-              href="#instagram" 
-              className="text-lg py-2 px-4 hover:bg-gray-800 rounded"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Instagram
             </a>
             <a 
               href="#location" 

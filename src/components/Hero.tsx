@@ -30,7 +30,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <a href="#about" className="flex flex-col items-center">
           <span className="text-sm mb-2">Rolar para baixo</span>
           <ChevronDown size={24} className="animate-pulse" />
