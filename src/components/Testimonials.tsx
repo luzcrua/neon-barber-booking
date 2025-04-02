@@ -1,27 +1,28 @@
 
 import { Star, Quote } from 'lucide-react';
 
+// Este array será substituído por depoimentos reais
 const testimonials = [
   {
     id: 1,
-    name: "Carlos Silva",
-    comment: "Melhor barbearia da região! Sempre saio satisfeito com o atendimento e o resultado.",
+    name: "Cliente Satisfeito",
+    comment: "Substitua este texto pelo depoimento real do cliente.",
     stars: 5,
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
+    image: "/placeholder.svg" // Substitua por imagens reais de clientes
   },
   {
     id: 2,
-    name: "Pedro Almeida",
-    comment: "Profissionais de alto nível e ambiente agradável. Recomendo a todos que querem um visual diferenciado.",
+    name: "Cliente Satisfeito",
+    comment: "Substitua este texto pelo depoimento real do cliente.",
     stars: 5,
-    image: "https://randomuser.me/api/portraits/men/41.jpg"
+    image: "/placeholder.svg" // Substitua por imagens reais de clientes
   },
   {
     id: 3,
-    name: "Lucas Ferreira",
-    comment: "Atendimento pontual e resultados impecáveis. A Neon Barber se tornou minha barbearia de preferência.",
+    name: "Cliente Satisfeito",
+    comment: "Substitua este texto pelo depoimento real do cliente.",
     stars: 5,
-    image: "https://randomuser.me/api/portraits/men/55.jpg"
+    image: "/placeholder.svg" // Substitua por imagens reais de clientes
   }
 ];
 
@@ -37,6 +38,15 @@ const Testimonials = () => {
       
       <div className="container mx-auto relative z-10">
         <h2 className="section-title neon-text-purple">O Que Nossos Clientes Dizem</h2>
+        <p className="section-subtitle max-w-3xl mx-auto mb-12">
+          Instruções para adicionar depoimentos reais:
+          <br />
+          <span className="text-sm text-gray-400">
+            • Substitua as imagens em placeholder.svg por fotos reais dos clientes<br />
+            • Adicione o nome real e depoimento na seção de código<br />
+            • Mantenha a avaliação de 5 estrelas para mostrar a qualidade dos serviços
+          </span>
+        </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (

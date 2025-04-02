@@ -1,6 +1,14 @@
 
-import { Scissors, GitMerge, Brush, Sparkles } from 'lucide-react';
+import { Scissors, GitMerge, Brush, Sparkles, Trending } from 'lucide-react';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselNext, 
+  CarouselPrevious 
+} from '@/components/ui/carousel';
 
+// Esta lista pode ser expandida no futuro para incluir mais serviços
 const services = [
   {
     id: 1,
@@ -33,6 +41,14 @@ const services = [
     description: "Tratamento para alisar e controlar os fios rebeldes.",
     icon: Sparkles,
     color: "neon-yellow"
+  },
+  {
+    id: 5,
+    name: "Corte Degradê",
+    price: "R$ 45",
+    description: "Técnica moderna com transição suave entre diferentes comprimentos.",
+    icon: Trending,
+    color: "neon-green"
   }
 ];
 
@@ -45,34 +61,49 @@ const Services = () => {
           Oferecemos uma variedade de serviços para cuidar do seu visual com excelência e atenção aos detalhes.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
-            <div 
-              key={service.id} 
-              className={`bg-barber-accent p-6 rounded-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-lg group relative overflow-hidden`}
-            >
-              <div className={`absolute -right-4 -top-4 w-24 h-24 rounded-full bg-opacity-10 ${service.color === "neon-blue" ? "bg-neon-blue" : service.color === "neon-pink" ? "bg-neon-pink" : service.color === "neon-purple" ? "bg-neon-purple" : "bg-neon-yellow"} group-hover:bg-opacity-20 transition-all duration-300`}></div>
-              
-              <div className="relative z-10">
-                <div className={`inline-flex items-center justify-center w-14 h-14 mb-4 rounded-full ${service.color === "neon-blue" ? "text-neon-blue bg-neon-blue" : service.color === "neon-pink" ? "text-neon-pink bg-neon-pink" : service.color === "neon-purple" ? "text-neon-purple bg-neon-purple" : "text-neon-yellow bg-neon-yellow"} bg-opacity-20 animate-pulse-neon`}>
-                  <service.icon size={24} />
-                </div>
-                
-                <h3 className="text-xl font-bold mb-2">{service.name}</h3>
-                
-                <p className="mb-4 text-gray-400">{service.description}</p>
-                
-                <div className={`text-2xl font-bold ${service.color === "neon-blue" ? "neon-text-blue" : service.color === "neon-pink" ? "neon-text-pink" : service.color === "neon-purple" ? "neon-text-purple" : "neon-text-yellow"}`}>
-                  {service.price}
-                </div>
-              </div>
-              
-              <div className={`absolute bottom-0 left-0 h-1 w-full transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 ${service.color === "neon-blue" ? "bg-neon-blue" : service.color === "neon-pink" ? "bg-neon-pink" : service.color === "neon-purple" ? "bg-neon-purple" : "bg-neon-yellow"}`}></div>
+        <div className="mb-12">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {services.map((service) => (
+                <CarouselItem key={service.id} className="md:basis-1/2 lg:basis-1/3 pl-4">
+                  <div 
+                    className={`bg-barber-accent p-6 rounded-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-lg group relative overflow-hidden h-full`}
+                  >
+                    <div className={`absolute -right-4 -top-4 w-24 h-24 rounded-full bg-opacity-10 ${service.color === "neon-blue" ? "bg-neon-blue" : service.color === "neon-pink" ? "bg-neon-pink" : service.color === "neon-purple" ? "bg-neon-purple" : service.color === "neon-green" ? "bg-neon-green" : "bg-neon-yellow"} group-hover:bg-opacity-20 transition-all duration-300`}></div>
+                    
+                    <div className="relative z-10">
+                      <div className={`inline-flex items-center justify-center w-14 h-14 mb-4 rounded-full ${service.color === "neon-blue" ? "text-neon-blue bg-neon-blue" : service.color === "neon-pink" ? "text-neon-pink bg-neon-pink" : service.color === "neon-purple" ? "text-neon-purple bg-neon-purple" : service.color === "neon-green" ? "text-neon-green bg-neon-green" : "text-neon-yellow bg-neon-yellow"} bg-opacity-20 animate-pulse-neon`}>
+                        <service.icon size={24} />
+                      </div>
+                      
+                      <h3 className="text-xl font-bold mb-2">{service.name}</h3>
+                      
+                      <p className="mb-4 text-gray-400">{service.description}</p>
+                      
+                      <div className={`text-2xl font-bold ${service.color === "neon-blue" ? "neon-text-blue" : service.color === "neon-pink" ? "neon-text-pink" : service.color === "neon-purple" ? "neon-text-purple" : service.color === "neon-green" ? "neon-text-green" : "neon-text-yellow"}`}>
+                        {service.price}
+                      </div>
+                    </div>
+                    
+                    <div className={`absolute bottom-0 left-0 h-1 w-full transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100 ${service.color === "neon-blue" ? "bg-neon-blue" : service.color === "neon-pink" ? "bg-neon-pink" : service.color === "neon-purple" ? "bg-neon-purple" : service.color === "neon-green" ? "bg-neon-green" : "bg-neon-yellow"}`}></div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="hidden md:flex items-center justify-center mt-4 gap-2">
+              <CarouselPrevious className="static translate-y-0 hover:bg-barber-accent hover:text-white" />
+              <CarouselNext className="static translate-y-0 hover:bg-barber-accent hover:text-white" />
             </div>
-          ))}
+          </Carousel>
         </div>
         
-        <div className="mt-16 text-center">
+        <div className="mt-8 text-center">
           <a href="#booking" className="neon-button-pink hover:bg-neon-pink hover:bg-opacity-20 inline-block">
             Agende Agora
           </a>
