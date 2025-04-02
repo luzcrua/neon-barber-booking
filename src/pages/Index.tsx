@@ -11,9 +11,13 @@ import Instagram from '../components/Instagram';
 import BookingForm from '../components/BookingForm';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import { trackPageView } from '../utils/analytics';
 
 const Index = () => {
   useEffect(() => {
+    // Rastrear visualização da página
+    trackPageView('/');
+    
     // Smooth scrolling for anchor links
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -28,6 +32,9 @@ const Index = () => {
             top: targetElement.getBoundingClientRect().top + window.scrollY - 80,
             behavior: 'smooth'
           });
+
+          // Rastrear navegação para âncora
+          trackPageView(`/${targetId}`);
 
           // Update URL without scrolling
           history.pushState(null, '', targetId);

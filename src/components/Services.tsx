@@ -7,6 +7,7 @@ import {
   CarouselNext, 
   CarouselPrevious 
 } from '@/components/ui/carousel';
+import { useEffect } from 'react';
 
 // Esta lista pode ser expandida no futuro para incluir mais serviços
 const services = [
@@ -53,6 +54,50 @@ const services = [
 ];
 
 const Services = () => {
+  // Adicionar dados estruturados para SEO
+  useEffect(() => {
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": services.map((service, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "Service",
+          "name": service.name,
+          "description": service.description,
+          "offers": {
+            "@type": "Offer",
+            "price": service.price.replace("R$ ", ""),
+            "priceCurrency": "BRL"
+          },
+          "provider": {
+            "@type": "BarberShop",
+            "name": "Neon Barber",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Rua Exemplo, 123",
+              "addressLocality": "São Paulo",
+              "addressRegion": "SP",
+              "postalCode": "01234-567",
+              "addressCountry": "BR"
+            }
+          }
+        }
+      }))
+    };
+
+    // Adicionar script do schema ao head
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(serviceSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <section id="services" className="section-padding bg-barber-dark">
       <div className="container mx-auto">
