@@ -1,5 +1,5 @@
 
-import { Scissors, GitMerge, Brush, Sparkles, Trending } from 'lucide-react';
+import { Scissors, GitMerge, Brush, Sparkles, TrendingUp } from 'lucide-react';
 import { 
   Carousel, 
   CarouselContent, 
@@ -47,7 +47,7 @@ const services = [
     name: "Corte Degradê",
     price: "R$ 45",
     description: "Técnica moderna com transição suave entre diferentes comprimentos.",
-    icon: Trending,
+    icon: TrendingUp,
     color: "neon-green"
   }
 ];
