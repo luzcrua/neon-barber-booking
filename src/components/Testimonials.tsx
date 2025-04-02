@@ -72,6 +72,20 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
+        
+        <div className="mt-12 text-center px-4">
+          <p className="text-xl mb-6">
+            Substitua estas imagens por fotos reais de seus clientes satisfeitos e seus depoimentos genuínos.
+          </p>
+          <div className="bg-barber-accent p-6 rounded-lg inline-block">
+            <h3 className="text-lg font-semibold mb-2 neon-text-purple">Instruções para personalização:</h3>
+            <ol className="text-left list-decimal pl-5 space-y-2">
+              <li>Tire fotos de seus clientes satisfeitos (com permissão)</li>
+              <li>Peça um breve depoimento sobre a experiência deles</li>
+              <li>Substitua os dados do array 'testimonials' no código</li>
+            </ol>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -6,6 +6,7 @@ import About from '../components/About';
 import Services from '../components/Services';
 import Gallery from '../components/Gallery';
 import Testimonials from '../components/Testimonials';
+import Instagram from '../components/Instagram';
 import Location from '../components/Location';
 import BookingForm from '../components/BookingForm';
 import Footer from '../components/Footer';
@@ -46,6 +47,7 @@ const Index = () => {
       <Services />
       <Gallery />
       <Testimonials />
+      <Instagram />
       <Location />
       <BookingForm />
       <Footer />
