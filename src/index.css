@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -50,10 +51,10 @@
 @layer components {
   .neon-text {
     @apply relative;
-    text-shadow: 0 0 5px rgba(currentColor, 0.7), 
-                 0 0 8px rgba(currentColor, 0.5), 
-                 0 0 15px rgba(currentColor, 0.3), 
-                 0 0 25px rgba(currentColor, 0.2);
+    text-shadow: 0 0 7px currentColor, 
+                 0 0 10px currentColor, 
+                 0 0 21px currentColor, 
+                 0 0 42px currentColor;
   }
 
   .neon-text-pink {
@@ -78,8 +79,8 @@
 
   .neon-border {
     @apply border-[1px] relative;
-    box-shadow: 0 0 3px currentColor, 
-                0 0 10px rgba(currentColor, 0.6);
+    box-shadow: 0 0 5px currentColor, 
+                0 0 15px currentColor;
   }
 
   .neon-border-pink {
@@ -104,9 +105,9 @@
 
   .neon-button {
     @apply px-6 py-3 font-bold rounded-md transition-all duration-300 relative overflow-hidden;
-    text-shadow: 0 0 5px rgba(currentColor, 0.7);
-    box-shadow: 0 0 3px currentColor, 
-                0 0 10px rgba(currentColor, 0.6);
+    text-shadow: 0 0 7px currentColor;
+    box-shadow: 0 0 5px currentColor, 
+                0 0 15px currentColor;
   }
 
   .neon-button-pink {
@@ -131,9 +132,9 @@
 
   .neon-button:hover {
     @apply bg-opacity-20;
-    box-shadow: 0 0 4px currentColor, 
-                0 0 15px currentColor, 
-                0 0 25px rgba(currentColor, 0.7);
+    box-shadow: 0 0 5px currentColor, 
+                0 0 20px currentColor, 
+                0 0 35px currentColor;
   }
 
   .section-padding {
