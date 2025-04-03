@@ -44,8 +44,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <div 
               key={testimonial.id} 
-              className="bg-barber-accent p-8 rounded-lg relative overflow-hidden group hover:shadow-neon-purple transition-all duration-300"
-            >
+              className="bg-barber-accent p-8 rounded-lg relative overflow-hidden group hover:shadow-neon-purple transition-all duration-300">
               <div className="mb-6 flex items-center">
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-neon-purple mr-4">
                   <img 
