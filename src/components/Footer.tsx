@@ -81,8 +81,16 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
           <p>© {currentYear} Neon Barber. Todos os direitos reservados.</p>
           <p className="mt-2 text-sm">
-            iDEALIZADO POR <span className="text-neon-pink">ARINELSON SANTOS</span>
-          </p>
+  iDEALIZADO POR{' '}
+  <a
+    href="https://www.instagram.com/arinelson.me"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-neon-pink"
+  >
+    ARINELSON SANTOS
+  </a>
+</p>
         </div>
       </div>
     </footer>
