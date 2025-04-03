@@ -38,15 +38,7 @@ const Testimonials = () => {
       
       <div className="container mx-auto relative z-10">
         <h2 className="section-title neon-text-purple">O Que Nossos Clientes Dizem</h2>
-        <p className="section-subtitle max-w-3xl mx-auto mb-12">
-          Instruções para adicionar depoimentos reais:
-          <br />
-          <span className="text-sm text-gray-400">
-            • Substitua as imagens em placeholder.svg por fotos reais dos clientes<br />
-            • Adicione o nome real e depoimento na seção de código<br />
-            • Mantenha a avaliação de 5 estrelas para mostrar a qualidade dos serviços
-          </span>
-        </p>
+      
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
